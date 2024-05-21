@@ -32,8 +32,62 @@ function loadPage(pageUrl) {
         });
 }
 
+function refresh(){
+    window.location.reload();
+}
+
+// document.getElementById('Dashboard').addEventListener('click', function() {
+//     document.getElementById('RightContent').innerHTML = swap;
+//     var changeDash = document.getElementById('Dashboard');
+// });
+
+
+var home = document.querySelector(".Dashboard");
+var profile = document.querySelector(".Profile");
+var log = document.querySelector(".LogBook");
+var mark = document.querySelector(".Marksheet");
+var certificate = document.querySelector(".Certificate");
+
+var elements1 = [home, log, mark, certificate];
+var elements2 = [profile, log, mark, certificate];
+var elements3 = [home, profile, mark, certificate];
+var elements4 = [home, profile, log, certificate];
+var elements5 = [home, profile, log, mark];
+
+function changeBackgroundColor(activeElement, elementsToChange) {
+    activeElement.style.backgroundColor = "#D7EDFF";
+    elementsToChange.forEach(function(element) {
+        element.style.backgroundColor = "transparent";
+    });
+}
+
+document.getElementById('Profile').addEventListener('click', function() {
+    changeBackgroundColor(profile, elements1);
+});
+document.getElementById('RightProfile').addEventListener('click', function() {
+    changeBackgroundColor(profile, elements1);
+});
 document.getElementById('Dashboard').addEventListener('click', function() {
-    document.getElementById('RightContent').innerHTML = swap;
-    var changeDash = document.getElementById('Dashboard');
-    
+    changeBackgroundColor(home, elements2);
+});
+document.getElementById('LogBook').addEventListener('click', function() {
+    changeBackgroundColor(log, elements3);
+});
+document.getElementById('Marksheet').addEventListener('click', function() {
+    changeBackgroundColor(mark, elements4);
+});
+document.getElementById('Certificate').addEventListener('click', function() {
+    changeBackgroundColor(certificate, elements5);
+});
+document.getElementById('RightProfile').addEventListener('click', function() {
+    changeBackgroundColor(profile, elements1);
+});
+document.getElementById('RightLogbook').addEventListener('click', function() {
+    changeBackgroundColor(log, elements3);
+});
+document.getElementById('RightMarksheet').addEventListener('click', function() {
+    changeBackgroundColor(mark, elements4);
+});
+document.getElementById('RightCertificate').addEventListener('click', function() {
+    changeBackgroundColor(certificate, elements5);
 });

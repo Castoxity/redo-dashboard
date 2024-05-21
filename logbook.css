@@ -1,0 +1,22 @@
+html,
+body{
+    padding:0;
+    margin:0;
+}
+
+.Parent{
+    width:1214px;
+    height:927;
+    background-color: #DADDE1;
+    height:100%;
+}
+
+.Sections{
+    display:flex;
+    gap:20px;
+}
+
+.WeekCards{
+    display:flex;
+    flex-direction: column;
+}

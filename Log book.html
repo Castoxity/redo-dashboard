@@ -5,40 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log book</title>
     <script src="https://kit.fontawesome.com/d98b2bf19e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="logbook.css">
 </head>
 <body>
-    <div id="Main">
-        <p style="color:black;">This is log book page</p>
-        <button type="button" onclick="loadPage('LogbookSample.html')">Sample</button>
+    <div class="Parent">
+        <div class="Top">
+            <div class="Heading">
+                <h3>Log Books</h3>
+            </div>
+        </div>
+        <div class="Sections">
+            <div class="All">
+                <button type="button" id="All">All</button>
+            </div>
+            <div class="Complete">
+                <button type="button" id="Complete">Complete</button>
+            </div>
+            <div class="Pending">
+                <button type="button" id="Pending">Pending</button>
+            </div>
+        </div>
+        <div class="Cards">
+            <div class="WeekCards">
+                <button type="button" id="BtnWeekly">Week 1</button>
+                <button type="button" id="BtnWeekly">Week 1</button>
+            </div>
+        </div>
     </div>
 </body>
-<script>
-function loadPage(pageUrl) {
-    fetch(pageUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.text();
-        })
-        .then(data => {
-            document.getElementById('Main').innerHTML = data;
-
-            const cssElement = document.createElement('link');
-            cssElement.rel = 'stylesheet';
-            cssElement.href = 'LogbookSample.css';
-            document.head.appendChild(cssElement);
-
-            const scriptElement = document.createElement('script');
-            scriptElement.onload = () => {
-                LogbookSample.init();
-            };
-            scriptElement.src = 'LogbookSample.js';
-            document.body.appendChild(scriptElement);
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
-}
+<script src="logbook.js">
 </script>
 </html>

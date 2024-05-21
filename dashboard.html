@@ -20,19 +20,54 @@
             </div>
             <div class="LeftDetails">
                 <div class="Dashboard">
-                    <button id="Dashboard"><i class="fa-solid fa-house"></i>Dashboard</button>
+                    <button id="Dashboard" onclick="refresh()">
+                        <div class="LImg">
+                            <i class="fa-solid fa-house"></i>
+                        </div>
+                        <div class="LText">
+                            Home
+                        </div>
+                        </button>
                 </div>
                 <div class="Profile">
-                    <button id="Profile" onclick="loadPage('profile.html')"><i class="fa-regular fa-user"></i>Profile</button>
+                    <button id="Profile" onclick="loadPage('profile.html')">
+                        <div class="LImg">
+                            <img src="/images/Unclicked/Profile.png" id="LImg">
+                        </div>
+                        <div class="LText">
+                            Profile
+                        </div>
+                        </button>
                 </div>
                 <div class="LogBook">
-                    <button id="LogBook" onclick="loadPage('Log book.html')"><i class="fa-solid fa-book-bookmark"></i>Log Books</button>
+                    <button id="LogBook" onclick="loadPage('Log book.html')">
+                        <div class="LImg">
+                            <img src="/images/Unclicked/Log Books.png" id="LImg">
+                        </div>
+                        <div class="LImgText">
+                            Log Book
+                        </div>
+                        </button>
                 </div>
                 <div class="Marksheet">
-                    <button id="Marksheet" onclick="loadPage('Marksheet.html')"><i class="fa-regular fa-file-lines"></i>Marksheet</button>
+                    <button id="Marksheet" onclick="loadPage('Marksheet.html')">
+                        <div class="LImg">
+                            <img src="/images/Unclicked/Marksheet.png" id="LImg">
+                        </div>
+                        <div class="LText">
+                            Marksheet
+                        </div>
+                        </button>
                 </div>
                 <div class="Certificate">
-                    <button id="Certificate" onclick="loadPage('Certificate.html')">Certificate</button>
+                    <button id="Certificate" onclick="loadPage('Certificate.html')">
+                        <div class="LImg">
+                            <img src="/images/Unclicked/certificate.png" id="LImg">
+                        </div>
+                        <div class="LText">
+                            Certificate
+                        </div>
+                        </button>
                 </div>
             </div>
         </div>
@@ -59,16 +94,42 @@
                     </div>
                     <div class="RightOptions">
                         <div class="RightProfile">
-                            <button type="button" id="RightProfile" onclick="loadPage('profile.html')"><i id="ProfileIcon" class="fa-solid fa-user"></i><br>Profile</button>
+                            <button type="button" id="RightProfile" onclick="loadPage('profile.html')">
+                                <div class="ButtonImg">
+                                    <img src="/images/Clicked/Profile.png" id="ImgProfile">
+                                </div>
+                                <div class="ButtonText">Profile</div>
+                            </button>
                         </div>
                         <div class="RightLogbook">
-                            <button type="button" id="RightLogbook" onclick="loadPage('Log book.html')"><i class="fa-solid fa-book"></i><br>Log Book</button>
+                            <button type="button" id="RightLogbook" onclick="loadPage('Log book.html')">
+                                <div class="ButtonImg">
+                                    <img src="/images/Unclicked/Log Books.png" id="ImgLog">
+                                </div>
+                            <div class="ButtonText">
+                                LogBook
+                            </div>
+                            </button>
                         </div>
                         <div class="RightMarksheet">
-                            <button type="button" id="RightMarksheet" onclick="loadPage('Marksheet.html')"><i class="fa-solid fa-sheet-plastic"></i><br>Marksheet</button>
+                            <button type="button" id="RightMarksheet" onclick="loadPage('Marksheet.html')">
+                                <div class="ButtonImg">
+                                    <img src="/images/Unclicked/Marksheet.png" id="ImgMark">
+                                </div>
+                            <div class="ButtonText">
+                                Marksheet
+                            </div>
+                            </button>
                         </div>
                         <div class="RightCertificate">
-                            <button type="button" id="RightCertificate" onclick="loadPage('Certificate.html')"><i class="fa-solid fa-newspaper"></i><br>Certificate</button>
+                            <button type="button" id="RightCertificate" onclick="loadPage('Certificate.html')">
+                                <div class="ButtonImg">
+                                    <img src="/images/Unclicked/certificate.png" id="ImgCertificate">
+                                </div>
+                            <div class="ButtonText">
+                                Certificate
+                            </div>
+                            </button>
                         </div>
                     </div>
                 <!-- </div> -->
