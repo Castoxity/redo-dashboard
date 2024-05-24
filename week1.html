@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <link rel="stylesheet" href="week1.css">
+</head>
+<body>
+    <div class="Parent">
+        <div class="Top">
+            <div class="TopHeading">
+                Week 1
+            </div>
+            <div class="FirstInputs">
+                <div class="InputGaps-1">
+                    <div class="bruh-1">
+                        <span id="DatesWorked">Dates Worked: <span id="Input-1"><input type="date" id="date"></span></span>
+                    </div>
+                    <div class="bruh-2">
+                        <div class="Department">
+                            <span id="Department">Department: </span>
+                        </div>
+                        <div class="dropdown">
+                            <select id="DepartmentDropdown">
+                                <option value="" disabled selected></option>
+                            </select>
+                        </div>
+                    </div> 
+                </div>
+                <div class="InputGaps-2">
+                    <div class="bruh-3">
+                        <div class="Shift">
+                            <span id="Shift">Shift:</span>
+                        </div>   
+                        <div class="dropdown">
+                            <select id="ShiftDropdown">
+                                <option value="" disabled selected></option>
+                            </select>
+                        </div>
+                    </div>                    
+                    <div class="bruh-4">
+                        <div class="Section">
+                            <span id="Section">Section: </span>
+                        </div>
+                        <div class="dropdown">
+                            <select id="SectionDropdown">
+                                <option value="" disabled selected></option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+        </div>
+        </div> 
+
+<div class="Second">
+    <div id="toolbar-container" style="display: none;">
+        <span class="ql-formats">
+            <button class="ql-bold"></button>
+            <button class="ql-italic"></button>
+            <button class="ql-underline"></button>
+            <button class="ql-strike"></button>
+        </span>
+        <span class="ql-formats">
+            <select class="ql-header">
+                <option selected></option>
+                <option value="1">H1</option>
+                <option value="2">H2</option>
+                <option value="3">H3</option>
+                <option value="4">H4</option>
+            </select>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-list" value="ordered"></button>
+            <button class="ql-list" value="bullet"></button>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-link"></button>
+            <button class="ql-image"></button>
+            <button class="ql-video"></button>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-blockquote"></button>
+            <button class="ql-code-block"></button>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-align" value=""></button>
+            <button class="ql-align" value="center"></button>
+            <button class="ql-align" value="right"></button>
+            <button class="ql-align" value="justify"></button>
+        </span>
+        <span class="ql-formats">
+            <button class="ql-clean"></button>
+        </span>
+    </div>
+    <div id="editor-container">
+    </div>
+</div>
+    </div>
+    <script src="week1.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script>
+        var toolbarOptions = [
+            ['bold', 'italic', 'underline', 'strike'],       
+            [{ 'header': 1 }, { 'header': 2 }, { 'header': 3 }, { 'header': 4 }],
+            [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+            ['link', 'image', 'video'],
+            ['blockquote', 'code-block'],
+            [{ 'align': [] }],
+            ['clean']
+        ];
+
+        var quill = new Quill('#editor-container', {
+            modules: {
+                toolbar: toolbarOptions
+            },
+            theme: 'snow'
+        });
+    </script>
+    <script>
+        const apiUrl = 'https://api.example.com/get-text';
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                const content = data.content;
+                quill.clipboard.dangerouslyPasteHTML(content);
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    </script>
+</body>
+</html>

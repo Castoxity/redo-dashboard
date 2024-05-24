@@ -32,15 +32,9 @@ function loadPage(pageUrl) {
         });
 }
 
-function refresh(){
+function refresh() {
     window.location.reload();
 }
-
-// document.getElementById('Dashboard').addEventListener('click', function() {
-//     document.getElementById('RightContent').innerHTML = swap;
-//     var changeDash = document.getElementById('Dashboard');
-// });
-
 
 var home = document.querySelector(".Dashboard");
 var profile = document.querySelector(".Profile");
@@ -56,8 +50,12 @@ var elements5 = [home, profile, log, mark];
 
 function changeBackgroundColor(activeElement, elementsToChange) {
     activeElement.style.backgroundColor = "#D7EDFF";
+    activeElement.querySelector('button').style.color = "#2B5972";
+    activeElement.querySelector('button').style.fontWeight = "bold";
     elementsToChange.forEach(function(element) {
         element.style.backgroundColor = "transparent";
+        element.querySelector('button').style.fontWeight = "normal";
+        element.querySelector('button').style.color = "#758087"; 
     });
 }
 
