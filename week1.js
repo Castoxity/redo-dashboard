@@ -38,10 +38,3 @@ sections.forEach(bruh3 => {
 
 // under this is for image
 
-function loadFile(event, imgId, textId) {
-    const image = document.getElementById(imgId);
-    const placeholder = image.nextElementSibling;
-    image.src = URL.createObjectURL(event.target.files[0]);
-    image.style.display = 'block';
-    placeholder.style.display = 'none';
-}
