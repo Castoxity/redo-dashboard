@@ -10,7 +10,7 @@ SectionDropdown.innerHTML = '';
 
 
 const departments = ['Option-1', 'Option-2', 'Option-3']; 
-const shifts = ['Option-1', 'Option-2', 'Option-3']; 
+const shifts = ['Morning', 'Evening']; 
 const sections = ['Option-1', 'Option-2', 'Option-3']; 
 
 

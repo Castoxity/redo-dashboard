@@ -10,20 +10,29 @@ function loadPage(pageUrl) {
             return response.text();
         })
         .then(data => {
-            document.getElementById('RightContent').innerHTML = data;
+            const rightContent = document.getElementById('RightContent');
+            rightContent.innerHTML = data;
 
-            if (pageUrl === 'LogbookSample.html') {
+            const existingCSS = document.querySelector('link[data-dynamic="true"]');
+            const existingScript = document.querySelector('script[data-dynamic="true"]');
+            if (existingCSS) existingCSS.remove();
+            if (existingScript) existingScript.remove();
+
+            if (pageUrl === 'week1.html') {
                 const cssElement = document.createElement('link');
                 cssElement.rel = 'stylesheet';
-
-                cssElement.href = 'LogbookInsideDash.css';
+                cssElement.href = 'weekinsidedash.css';
+                cssElement.setAttribute('data-dynamic', 'true');
                 document.head.appendChild(cssElement);
 
                 const scriptElement = document.createElement('script');
+                scriptElement.src = 'week1.js';
+                scriptElement.setAttribute('data-dynamic', 'true');
                 scriptElement.onload = () => {
-                    LogbookSample.init();
+                    if (typeof week1 !== 'undefined' && typeof week1.init === 'function') {
+                        week1.init();
+                    }
                 };
-                scriptElement.src = 'LogbookSample.js';
                 document.body.appendChild(scriptElement);
             }
         })
@@ -31,6 +40,7 @@ function loadPage(pageUrl) {
             console.error('There was a problem with the fetch operation:', error);
         });
 }
+
 
 function refresh() {
     window.location.reload();
@@ -89,3 +99,5 @@ document.getElementById('RightMarksheet').addEventListener('click', function() {
 document.getElementById('RightCertificate').addEventListener('click', function() {
     changeBackgroundColor(certificate, elements5);
 });
+
+
