@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+   
     function loadPage(pageUrl) {
         fetch(pageUrl)
             .then(response => {
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         week1.init();
                     }
                 };
-                scriptElement.src = 'week1.js';
+                scriptElement.src = 'week1api.js';
                 document.body.appendChild(scriptElement);
             })
             .catch(error => {

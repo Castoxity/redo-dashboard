@@ -24,7 +24,7 @@ background of cards F6F8F9
 .FirstInputs {
     display: flex;
     padding-top:2%;
-    gap:20px;
+    gap:3%;
     font-size:16px;
     font-weight:400;
 }
@@ -60,6 +60,7 @@ border: 1px solid #DEE2E6;
     color:#2B5972;
     font-size:20px;
     font-weight:600;
+    display:flex;
 }
 
 .W-Top,
@@ -74,23 +75,15 @@ border: 1px solid #DEE2E6;
     padding-right:1%;
     background-color:#F6F8F9;
 }
-.W-Last{
-    margin-top:1%;
-    margin-left:5%;
-    width:80%;
-    padding-bottom:2%;
-    padding-left:1%;
-    padding-right:1%;
-    text-align: right[];
-}
+
 /* .Fourth{
     height:450px;
 } */
 
-#editor-container,
+/* #editor-container,
 #editor-container-2 {
 height:300px;
-}
+} */
 
 .W-Subtitle-1,
 .W-Subtitle-2,
@@ -102,7 +95,7 @@ height:300px;
 
 
 /* for the buttons inside textbox */
-.ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
+/* .ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
     background: none;
     border: 1px solid black;
     cursor: pointer;
@@ -115,7 +108,7 @@ height:300px;
 
 .ql-toolbar.ql-snow .ql-picker-label {
     border: 1px solid black;
-  }
+  } */
 
   /* #BtnSave,
   #BtnCompleted{
@@ -123,3 +116,109 @@ height:300px;
     padding-left:15px;
     padding-right:15px;
   } */
+
+ 
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* gap: 15px; */
+  }
+  button {
+    height: 28px;
+    width: 28px;
+    display: grid;
+
+    border-radius: 4px;
+    border: none;
+    background-color: transparent;
+    outline:none;
+    border: 1px solid white;
+    color: #020929;
+  }
+  select {
+    padding: 7px;
+    border: 1px solid #020929;
+    border-radius: 4px;
+  }
+  .options label,
+  .options select {
+    font-family: "Poppins", sans-serif;
+  }
+  /* .input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  } */
+  input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    width: 30px;
+    height: 26px;
+    border: none;
+    cursor: pointer;
+  }
+  input[type="color"]::-webkit-color-swatch {
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px black;
+  }
+  input[type="color"]::-moz-color-swatch {
+    border-radius: 15px;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
+  }
+  #text-input {
+    margin-top: 10px;
+    min-height:300px;
+    border: 1px solid #dddddd;
+    margin-bottom:20px;
+  }
+  .active {
+    background-color: #e0e9ff;
+  }
+
+  .week1-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center; 
+}
+
+.W-Second,
+.W-Third {
+    width: 80%; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+}
+
+.W-Second .WT-container,
+.W-Third .WT2-container
+ {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.W-Second .options,
+.W-Third .options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+
+.W-Second #text-input,
+.W-second #text-input {
+    flex: 1; 
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    box-sizing: border-box;
+}
