@@ -1,24 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bonheur+Royale&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Style+Script&display=swap');
-
-html ,
-body{
-    width:100%;
-    padding:0;
-    margin:0;
-    font-family:Poppins;
-    height:100%;
-    /* display:flex;
-    justify-content: center; */
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: Poppins, sans-serif;
 }
 
-/* .week1-container{
-    display:block;
-    width:100%;
-} */
+.week1-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+   
+}
 
 /* the blue color to use 2B5972
 background of cards F6F8F9
  */
+ 
 
 
 .FirstInputs {
@@ -66,7 +64,7 @@ border: 1px solid #DEE2E6;
 .W-Top,
 .W-Second,
 .W-Third,
-.W-Fourth{
+.W-Last{
     margin-top:1%;
     margin-left:5%;
     width:80%;
@@ -171,7 +169,8 @@ height:300px;
   #text-input {
     margin-top: 10px;
     min-height:300px;
-    border: 1px solid #dddddd;
+    border: none;
+    outline:none;
     margin-bottom:20px;
   }
   .active {
@@ -193,7 +192,7 @@ height:300px;
     flex-direction: column;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+ 
     background-color: #f8f9fa;
 }
 
@@ -211,6 +210,8 @@ height:300px;
     flex-wrap: wrap;
     gap: 5px;
     margin-bottom: 10px;
+    padding-top:10px;
+    padding-left:10px;
 }
 
 .W-Second #text-input,
@@ -221,4 +222,10 @@ height:300px;
     padding: 10px;
     overflow-y: auto;
     box-sizing: border-box;
+}
+
+.W-Last{
+  padding-bottom:400px;
+  margin-bottom:10px;
+
 }

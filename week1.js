@@ -43,6 +43,7 @@ const initializer = () => {
 };
 const modifyText = (command, defaultUi, value) => {
   document.execCommand(command, defaultUi, value);
+  // apparently the exec is lined out cuz its not recommended due to inconsistencies?
 };
 optionsButtons.forEach((button) => {
   button.addEventListener("click", () => {
