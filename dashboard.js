@@ -21,7 +21,7 @@ function loadPage(pageUrl) {
             if (pageUrl === 'week1.html') {
                 const cssElement = document.createElement('link');
                 cssElement.rel = 'stylesheet';
-                cssElement.href = 'weekinsidedash.css';
+                cssElement.href = 'week1.css';
                 cssElement.setAttribute('data-dynamic', 'true');
                 document.head.appendChild(cssElement);
 

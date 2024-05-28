@@ -17,21 +17,31 @@ html, body {
 background of cards F6F8F9
  */
  
+ .W-ExpandableBox{
+  width:100%;
+  
+ }
 
 
 .FirstInputs {
     display: flex;
     padding-top:2%;
-    gap:3%;
+    gap:6%;
     font-size:16px;
     font-weight:400;
 }
 
-
-#date
+#date,
+.form-select
 {
-width:100%;
+  font-size: 13px;
+  padding:10px;
+  width:90%;
+  border-radius: 4px;
 border: 1px solid #DEE2E6;
+cursor:pointer;
+outline:none;
+
 }
 
 /* .expandable-input {
@@ -45,7 +55,11 @@ border: 1px solid #DEE2E6;
     box-sizing: border-box;
 } */
 
+.Shift,
+.Department,
+.Section,
 .Date{
+  width:25%;
     display:flex;
     flex-direction: column;
 }
@@ -67,7 +81,7 @@ border: 1px solid #DEE2E6;
 .W-Last{
     margin-top:1%;
     margin-left:5%;
-    width:80%;
+    width:90%;
     padding-bottom:2%;
     padding-left:1%;
     padding-right:1%;
@@ -90,39 +104,14 @@ height:300px;
     padding-bottom:1%;
 }
 
-
-
-/* for the buttons inside textbox */
-/* .ql-snow.ql-toolbar button, .ql-snow .ql-toolbar button {
-    background: none;
-    border: 1px solid black;
-    cursor: pointer;
-    display: inline-block;
-    float: left;
-    height: 24px;
-    padding: 3px 5px;
-    width: 28px;
-}
-
-.ql-toolbar.ql-snow .ql-picker-label {
-    border: 1px solid black;
-  } */
-
-  /* #BtnSave,
-  #BtnCompleted{
-    padding:10px;
-    padding-left:15px;
-    padding-right:15px;
-  } */
-
  
   .options {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    /* gap: 15px; */
   }
-  button {
+  .W-Second button,
+  .W-Third button {
     height: 28px;
     width: 28px;
     display: grid;
@@ -134,13 +123,16 @@ height:300px;
     border: 1px solid white;
     color: #020929;
   }
-  select {
+  .W-Second select,
+  .W-Third select {
     padding: 7px;
     border: 1px solid #020929;
     border-radius: 4px;
   }
-  .options label,
-  .options select {
+  .W-Second .options label,
+  .W-Second .options select,
+  .W-Third .options label,
+  .W-Third .options select {
     font-family: "Poppins", sans-serif;
   }
   /* .input-wrapper {
@@ -148,7 +140,8 @@ height:300px;
     align-items: center;
     gap: 6px;
   } */
-  input[type="color"] {
+  .W-Second input[type="color"],
+  .W-Third input[type="color"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -158,22 +151,26 @@ height:300px;
     border: none;
     cursor: pointer;
   }
-  input[type="color"]::-webkit-color-swatch {
+  .W-Second input[type="color"]::-webkit-color-swatch,
+  .W-Third input[type="color"]::-webkit-color-swatch {
     border-radius: 15px;
     box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px black;
   }
-  input[type="color"]::-moz-color-swatch {
+  .W-Second input[type="color"]::-moz-color-swatch,
+  .W-Third input[type="color"]::-moz-color-swatch {
     border-radius: 15px;
     box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
   }
-  #text-input {
+  .W-Second #text-input,
+  .W-Third #text-input {
     margin-top: 10px;
     min-height:300px;
     border: none;
     outline:none;
     margin-bottom:20px;
   }
-  .active {
+  .W-Second .active,
+  .W-Third .active {
     background-color: #e0e9ff;
   }
 
@@ -186,7 +183,7 @@ height:300px;
 
 .W-Second,
 .W-Third {
-    width: 80%; 
+    width: 90%; 
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -213,6 +210,7 @@ height:300px;
     margin-bottom: 10px;
     padding-top:10px;
     padding-left:10px;
+    padding-bottom:10px;
     border-bottom: 1px solid #CED4DA;
 }
 
