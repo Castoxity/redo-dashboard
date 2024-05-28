@@ -88,3 +88,7 @@ const highlighterRemover = (className) => {
   });
 };
 window.onload = initializer();
+
+
+// anything beneath this is for image
+

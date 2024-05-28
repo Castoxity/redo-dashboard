@@ -4,12 +4,13 @@ html, body {
   padding: 0;
   margin: 0;
   font-family: Poppins, sans-serif;
+
 }
 
 .week1-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height:100%;
    
 }
 
@@ -41,7 +42,6 @@ background of cards F6F8F9
 border: 1px solid #DEE2E6;
 cursor:pointer;
 outline:none;
-
 }
 
 /* .expandable-input {
@@ -225,7 +225,18 @@ height:300px;
 }
 
 .W-Last{
-  padding-bottom:400px;
   margin-bottom:10px;
 
+}
+
+.W-LImg{
+  width:100%;
+  
+  /* background-color: red; */
+}
+
+.W-LBtn{
+  width:315px;
+  height:279px;
+  border:dotted;
 }
