@@ -1,10 +1,9 @@
+// JavaScript Code for Text Editor
 
-// under this is for textbox
 let optionsButtons = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
-let fontName = document.getElementById("fontName");
-let fontSizeRef = document.getElementById("fontSize");
-let writingArea = document.getElementById("text-input");
+const fontNames = ["fontName1", "fontName2"];
+const fontSizes = ["fontSize1", "fontSize2"];
 let linkButton = document.getElementById("createLink");
 let alignButtons = document.querySelectorAll(".align");
 let spacingButtons = document.querySelectorAll(".spacing");
@@ -19,51 +18,72 @@ let fontList = [
   "Courier New",
   "cursive",
 ];
+
+// Initialize font options and event listeners
 const initializer = () => {
   highlighter(alignButtons, true);
   highlighter(spacingButtons, true);
   highlighter(formatButtons, false);
   highlighter(scriptButtons, true);
+
   // options for font names
-  fontList.map((value) => {
-    let option = document.createElement("option");
-    option.value = value;
-    option.innerHTML = value;
-    fontName.appendChild(option);
+  fontNames.forEach(id => {
+    const fontName = document.getElementById(id);
+    if (fontName) {
+      fontList.forEach(font => {
+        const option = document.createElement("option");
+        option.value = font;
+        option.innerHTML = font;
+        fontName.appendChild(option);
+      });
+    }
   });
-  //font allows only till 7
-  for (let i = 1; i <= 7; i++) {
-    let option = document.createElement("option");
-    option.value = i;
-    option.innerHTML = i;
-    fontSizeRef.appendChild(option);
-  }
-  //default size
-  fontSizeRef.value = 3;
+
+  // options for font sizes
+  fontSizes.forEach(id => {
+    const fontSize = document.getElementById(id);
+    if (fontSize) {
+      for (let i = 1; i <= 7; i++) {
+        const option = document.createElement("option");
+        option.value = i;
+        option.innerHTML = i;
+        fontSize.appendChild(option);
+      }
+    }
+  });
+
+  addFontEventListeners();
 };
+
+// Modify text based on command
 const modifyText = (command, defaultUi, value) => {
   document.execCommand(command, defaultUi, value);
-  // apparently the exec is lined out cuz its not recommended due to inconsistencies?
 };
+
+// Add event listeners for buttons
 optionsButtons.forEach((button) => {
   button.addEventListener("click", () => {
     modifyText(button.id, false, null);
   });
 });
+
 advancedOptionButton.forEach((button) => {
   button.addEventListener("change", () => {
     modifyText(button.id, false, button.value);
   });
 });
-linkButton.addEventListener("click", () => {
-  let userLink = prompt("Enter a URL");
-  if (/http/i.test(userLink)) {
-    modifyText(linkButton.id, false, userLink);
-  } else {
-    userLink = "http://" + userLink;
-    modifyText(linkButton.id, false, userLink);
-  }
-});
+
+if (linkButton) {
+  linkButton.addEventListener("click", () => {
+    let userLink = prompt("Enter a URL");
+    if (/http/i.test(userLink)) {
+      modifyText(linkButton.id, false, userLink);
+    } else {
+      userLink = "http://" + userLink;
+      modifyText(linkButton.id, false, userLink);
+    }
+  });
+}
 const highlighter = (className, needsRemoval) => {
   className.forEach((button) => {
     button.addEventListener("click", () => {
@@ -87,8 +107,22 @@ const highlighterRemover = (className) => {
     button.classList.remove("active");
   });
 };
-window.onload = initializer();
-
-
-// anything beneath this is for image
-
+function addFontEventListeners() {
+  fontNames.forEach(id => {
+    const fontName = document.getElementById(id);
+    if (fontName) {
+      fontName.addEventListener("change", function() {
+        document.execCommand("fontName", false, this.value);
+      });
+    }
+  });
+  fontSizes.forEach(id => {
+    const fontSize = document.getElementById(id);
+    if (fontSize) {
+      fontSize.addEventListener("change", function() {
+        document.execCommand("fontSize", false, this.value);
+      });
+    }
+  });
+}
+document.addEventListener("DOMContentLoaded", initializer);

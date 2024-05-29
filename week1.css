@@ -103,8 +103,6 @@ height:300px;
     padding-top:2%;
     padding-bottom:1%;
 }
-
- 
   .options {
     display: flex;
     flex-wrap: wrap;
@@ -115,7 +113,7 @@ height:300px;
     height: 28px;
     width: 28px;
     display: grid;
-
+    align-items: center;
     border-radius: 4px;
     border: none;
     background-color: transparent;
@@ -135,11 +133,11 @@ height:300px;
   .W-Third .options select {
     font-family: "Poppins", sans-serif;
   }
-  /* .input-wrapper {
+  .input-wrapper {
     display: flex;
     align-items: center;
     gap: 6px;
-  } */
+  }
   .W-Second input[type="color"],
   .W-Third input[type="color"] {
     -webkit-appearance: none;
@@ -161,8 +159,8 @@ height:300px;
     border-radius: 15px;
     box-shadow: 0 0 0 2px #ffffff, 0 0 0 3px #020929;
   }
-  .W-Second #text-input,
-  .W-Third #text-input {
+  .W-Second #text-input1 ,
+  .W-Third #text-input2 {
     margin-top: 10px;
     min-height:300px;
     border: none;
@@ -214,8 +212,8 @@ height:300px;
     border-bottom: 1px solid #CED4DA;
 }
 
-.W-Second #text-input,
-.W-Third #text-input {
+.W-Second #text-input1,
+.W-Third #text-input2 {
     flex: 1; 
     width: 95%;
     /* padding: 10px; */
