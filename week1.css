@@ -237,4 +237,6 @@ height:300px;
   width:315px;
   height:279px;
   border:dotted;
+  outline:none;
+  background:transparent;
 }
