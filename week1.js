@@ -1,4 +1,3 @@
-// JavaScript Code for Text Editor
 
 let optionsButtons = document.querySelectorAll(".option-button");
 let advancedOptionButton = document.querySelectorAll(".adv-option-button");
@@ -129,32 +128,17 @@ document.addEventListener("DOMContentLoaded", initializer);
 
 
 // anything beneath is for imgae
-
-document.addEventListener("DOMContentLoaded", function () {
-  const ImgInp = document.getElementById('W-LBtn');
-  const ImgBtn = document.querySelector(".W-LBtn"); // Corrected selector for the image upload button
-  const ImgContainer = document.querySelector('.W-LImgInserted'); // Corrected selector for the image container
-
-  ImgBtn.addEventListener("click", function () {
-    ImgInp.click();
-  });
-
-  ImgInp.addEventListener("change", function () { // Corrected event listener for image input change
-    handleImageUpload(ImgInp.files[0]);
-  });
-
-  function handleImageUpload(file) {
-    if (file) {
+const button1 = document.querySelector(".W-LBtn");
+function displayImage(event) {
+  const input = event.target;
+  if (input.files && input.files[0]) {
       const reader = new FileReader();
       reader.onload = function (e) {
-        const img = document.createElement("img");
-        img.src = e.target.result;
-        img.alt = "W-LImgInserted";
-        img.classList.add("W-LImgInserted");
-        ImgContainer.innerHTML = ""; // Clear previous content in the container
-        ImgContainer.appendChild(img); // Append the uploaded image to the container
-      };
-      reader.readAsDataURL(file);
-    }
+          const image = document.getElementById('W-LImgInserted');
+          image.src = e.target.result;
+          image.style.display = 'block';
+          button1.style.display = 'none';
+      }
+      reader.readAsDataURL(input.files[0]);
   }
-});
+}

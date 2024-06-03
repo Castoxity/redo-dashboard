@@ -246,17 +246,17 @@
         </div>
         <div class="W-Last">
           <div class="W-LastHeading">
-            Minimum of 2 pictures are required and maximum of 4 pictures.
+              Minimum of 2 pictures are required and maximum of 4 pictures.
           </div>
           <div class="W-LImg">
-            <div class="LImgContainer">
-                <input type="file" id="W-LBtn" style="display:none;">
-                <button type="button" class="W-LBtn">Upload Images As You Desire <i class="fa-solid fa-arrow-pointer"></i></button>
-                <div class="W-LImgInserted"></div>
-            </div>
-            <div class="W-LTextbox"></div>
+              <div class="LImgContainer">
+                  <input type="file" id="W-LBtn" class="hidden-input" accept="image/*" onchange="displayImage(event)" style="display:none;">
+                  <button type="button" class="W-LBtn" onclick="document.getElementById('W-LBtn').click();">Upload Images As You Desire <i class="fa-solid fa-arrow-pointer"></i></button>
+                  <img id="W-LImgInserted" class="W-LImgInserted" alt="Uploaded Image" style="display:none;">
+              </div>
+              <div class="W-LTextbox"></div>
+          </div>
         </div>
-    </div>
 </div>
 <script src="week1.js"></script>
 </body>

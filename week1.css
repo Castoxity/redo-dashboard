@@ -240,3 +240,11 @@ height:300px;
   outline:none;
   background:transparent;
 }
+
+#W-LImgInserted{
+  height:279px;
+  width:315px;
+  object-fit: cover;
+  /* position:relative;
+  bottom:279px; */
+}
