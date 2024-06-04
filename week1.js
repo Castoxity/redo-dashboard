@@ -128,16 +128,15 @@ document.addEventListener("DOMContentLoaded", initializer);
 
 
 // anything beneath is for imgae
-const button1 = document.querySelector(".W-LBtn");
-function displayImage(event) {
+function displayImage(event, imgId) {
   const input = event.target;
   if (input.files && input.files[0]) {
       const reader = new FileReader();
       reader.onload = function (e) {
-          const image = document.getElementById('W-LImgInserted');
+          const image = document.getElementById(imgId);
           image.src = e.target.result;
           image.style.display = 'block';
-          button1.style.display = 'none';
+          input.nextElementSibling.style.display = 'none';
       }
       reader.readAsDataURL(input.files[0]);
   }

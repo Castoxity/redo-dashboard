@@ -249,13 +249,32 @@
               Minimum of 2 pictures are required and maximum of 4 pictures.
           </div>
           <div class="W-LImg">
-              <div class="LImgContainer">
-                  <input type="file" id="W-LBtn" class="hidden-input" accept="image/*" onchange="displayImage(event)" style="display:none;">
-                  <button type="button" class="W-LBtn" onclick="document.getElementById('W-LBtn').click();">Upload Images As You Desire <i class="fa-solid fa-arrow-pointer"></i></button>
-                  <img id="W-LImgInserted" class="W-LImgInserted" alt="Uploaded Image" style="display:none;">
-              </div>
-              <div class="W-LTextbox"></div>
-          </div>
+            <div class="LImgContainer">
+                <input type="file" id="W-LBtn1" class="hidden-input" accept="image/*" onchange="displayImage(event, 'W-LImgInserted1')" style="display:none;">
+                <button type="button" id="Btn1" class="W-LBtn" onclick="document.getElementById('W-LBtn1').click();">Upload Image 1 <i class="fa-solid fa-arrow-pointer"></i></button>
+                <img id="W-LImgInserted1" class="W-LImgInserted" alt="Uploaded and image bruv">
+                <textarea id="TextUnderImage" spellcheck="false"></textarea>
+            </div>
+            <div class="LImgContainer">
+                <input type="file" id="W-LBtn2" class="hidden-input" accept="image/*" onchange="displayImage(event, 'W-LImgInserted2')" style="display:none;">
+                <button type="button" id="Btn2" class="W-LBtn" onclick="document.getElementById('W-LBtn2').click();">Upload Image 2 <i class="fa-solid fa-arrow-pointer"></i></button>
+                <img id="W-LImgInserted2" class="W-LImgInserted" alt="Uploaded an image bruv">
+                <textarea id="TextUnderImage"></textarea>
+            </div>
+            <div class="LImgContainer">
+                <input type="file" id="W-LBtn3" class="hidden-input" accept="image/*" onchange="displayImage(event, 'W-LImgInserted3')" style="display:none;">
+                <button type="button" id="Btn3" class="W-LBtn" onclick="document.getElementById('W-LBtn3').click();">Upload Image 3 <i class="fa-solid fa-arrow-pointer"></i></button>
+                <img id="W-LImgInserted3" class="W-LImgInserted" alt="Uploaded an image bruv">
+                <textarea id="TextUnderImage"></textarea>
+            </div>
+            <div class="LImgContainer">
+                <input type="file" id="W-LBtn4" class="hidden-input" accept="image/*" onchange="displayImage(event, 'W-LImgInserted4')" style="display:none;">
+                <button type="button" id="Btn4" class="W-LBtn" onclick="document.getElementById('W-LBtn4').click();">Upload Image 4 <i class="fa-solid fa-arrow-pointer"></i></button>
+                <img id="W-LImgInserted4" class="W-LImgInserted" alt="Uploaded an image bruv">
+                <textarea id="TextUnderImage"></textarea>
+            </div>
+        </div>
+    </div>
         </div>
 </div>
 <script src="week1.js"></script>
