@@ -18,14 +18,13 @@ let fontList = [
   "cursive",
 ];
 
-// Initialize font options and event listeners
 const initializer = () => {
   highlighter(alignButtons, true);
   highlighter(spacingButtons, true);
   highlighter(formatButtons, false);
   highlighter(scriptButtons, true);
 
-  // options for font names
+
   fontNames.forEach(id => {
     const fontName = document.getElementById(id);
     if (fontName) {
@@ -38,7 +37,6 @@ const initializer = () => {
     }
   });
 
-  // options for font sizes
   fontSizes.forEach(id => {
     const fontSize = document.getElementById(id);
     if (fontSize) {
@@ -54,12 +52,10 @@ const initializer = () => {
   addFontEventListeners();
 };
 
-// Modify text based on command
 const modifyText = (command, defaultUi, value) => {
   document.execCommand(command, defaultUi, value);
 };
 
-// Add event listeners for buttons
 optionsButtons.forEach((button) => {
   button.addEventListener("click", () => {
     modifyText(button.id, false, null);

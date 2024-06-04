@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         week1.init();
                     }
                 };
-                scriptElement.src = 'week1api.js';
+                scriptElement.src = 'week1.js';
                 document.body.appendChild(scriptElement);
             })
             .catch(error => {
@@ -71,3 +71,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+function loadPage(page) {
+    const myDiv = document.getElementById('BreadcrumbName');
+    myDiv.textContent = `${page}`;
+}
